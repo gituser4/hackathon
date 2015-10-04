@@ -1,0 +1,15 @@
+<template name="campaignItem">
+  <a class="item-campaign {{highlightedClass}}" href="{{path}}">
+    {{#with campaign}}
+      <span class="attribution">
+        <span class="title-campaign">{{title}}</span>
+        <span class="metadata-campaign">
+          <span class="author-campaign">{{source.name}}</span>
+          <span class="bookmarks-campaign"><span class="icon-bookmark"></span> {{bookmarkCount}}</span>
+        </span>
+      </span>
+    {{/with}}
+
+    <img src="{{campaignImage campaign=campaign size=size}}" />
+  </a>
+</template>

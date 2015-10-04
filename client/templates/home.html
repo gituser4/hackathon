@@ -1,0 +1,40 @@
+<template name="home">
+  <div class="page home">
+
+    {{>nav title='Welcome to GiveLight' black=true}}
+
+    <div class="content-scrollable">
+      <div class="bg-image home">
+      </div>
+
+      <div class="callout-news">
+        <span class="title-callout">Campaign News</span>
+        {{latestNews.text}}
+      </div>
+
+      <h2 class="list-title">Campaigns by Friends</h2>
+      <div class="list-activities">
+        {{#each activities}}
+          {{> activity}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No one has started a campaigns yet!</div>
+            <div class="subtitle-message">Start a campaigns.</div>
+          </div>
+        {{/each}}
+      </div>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">See friends's campaignss</a>
+
+      <h2 class="list-title">Our Favorite Campaigns</h2>
+      <div class="list-subtitle">Rolling monthly spotlight for GiveLight campaignss</div>
+      <div class="list-campaigns">
+        {{#each featuredCampaigns}}
+          {{> campaignItem campaign=this size='small'}}
+        {{/each}}
+      </div>
+
+      <a href="{{pathFor 'campaigns'}}" class="btn-primary">Explore all our campaigns</a>
+    </div>
+
+  </div>
+</template>

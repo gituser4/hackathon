@@ -1,0 +1,18 @@
+<template name="campaigns">
+  <div class="page campaigns">
+    {{> nav title='Campaigns' black=true}}
+
+    <div class="content-scrollable">
+      <div class="list-campaigns">
+        {{#each this}}
+          {{#if highlighted}}
+            {{> campaignItem campaign=this size='large'}}
+          {{else}}
+            {{> campaignItem campaign=this size='small'}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+</template>

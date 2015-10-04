@@ -1,0 +1,31 @@
+<template name="feed">
+    <div class="page whats-happening">
+
+        {{>nav title="Happening Now"}}
+
+        <div class="content-scrollable">
+            <div class="list-activities {{#unless ready}}loading{{/unless}}">
+                {{#if ready}}
+                    {{#each activities}}
+                        {{> activity}}
+                    {{else}}
+                        <div class="wrapper-message">
+                            <div class="title-message">No one is active anything
+                                yet!
+                            </div>
+                            <div class="subtitle-message">Start a campaign or
+                                donate to an existing campaign and it will show
+                                up here.
+                            </div>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <div class="wrapper-message">
+                        <div class="icon-sync"></div>
+                        <div class="title-message">Loading</div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
